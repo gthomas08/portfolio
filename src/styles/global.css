@@ -14,8 +14,8 @@
   --blue: #8db9dc;
   --yellow: #d6bd84;
   --coral: #e7a18d;
-  --sans: "Inter Variable", sans-serif;
-  --mono: "JetBrains Mono", monospace;
+  --sans: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  --mono: "JetBrains Mono Variable", "JetBrains Mono", monospace;
 }
 :root[data-theme="light"] {
   color-scheme: light;
@@ -1401,7 +1401,7 @@ dialog::backdrop {
     font-size: 11px;
   }
   .hero h1 {
-    font-size: 34px;
+    font-size: clamp(22px, 6.4vw, 30px);
   }
   .section-heading > a {
     font-size: 9px;

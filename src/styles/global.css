@@ -272,16 +272,6 @@ p {
   justify-content: center;
   font-weight: 500;
 }
-.tree-muted {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 7px 0 7px 29px;
-  color: var(--subtle);
-}
-.config-file {
-  padding-left: 28px;
-}
 .sidebar-bottom {
   margin-top: auto;
   padding: 26px 20px 27px;

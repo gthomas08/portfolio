@@ -1,0 +1,84 @@
+---
+import Editor from "../layouts/Editor.astro";
+import Icon from "../components/Icon.astro";
+import Project from "../components/Project.astro";
+import { profile, projects, articles } from "../data/portfolio";
+---
+
+<Editor page="">
+  <div class="page welcome-page">
+    <div class="source-comment">
+      <span class="line-number">01</span>
+      <span>// a work in progress, just like me</span>
+    </div>
+    <section class="hero">
+      <div class="hello">
+        <span class="tiny-cross">✳</span> Hello, world. I’m{" "}
+        {profile.name.split(" ")[0]}.
+      </div>
+      <h1>
+        Developer by craft.
+        <br />
+        <span>Curious by default.</span>
+      </h1>
+      <p>{profile.intro}</p>
+      <div class="hero-actions">
+        <a class="button primary" href="/projects/">
+          Explore my work <Icon name="arrow" />
+        </a>
+        <a class="text-link" href="/contact/">
+          Let’s build something <Icon name="external" />
+        </a>
+      </div>
+      <div class="availability">
+        <span class="online-dot"></span>
+        {profile.available
+          ? "Open to interesting opportunities"
+          : "Currently making things"}
+        <span class="availability-divider">/</span>
+        <span>{profile.location}</span>
+      </div>
+    </section>
+    <section class="selected-work">
+      <div class="section-heading">
+        <h2>
+          Selected work
+          <span class="count">
+            {projects.slice(0, 2).length.toString().padStart(2, "0")}
+          </span>
+        </h2>
+        <a href="/projects/">
+          View all projects <Icon name="arrow" size={14} />
+        </a>
+      </div>
+      <div class="project-grid">
+        {projects.slice(0, 2).map((project) => (
+          <Project project={project} />
+        ))}
+      </div>
+    </section>
+    <section class="recent-note">
+      <div>
+        <span class="source-comment">// recently on my mind</span>
+        <h2>
+          <a href={`/journal/#${articles[0].id}`}>
+            {articles[0].title}
+            <Icon name="external" size={18} />
+          </a>
+        </h2>
+        <p>
+          {articles[0].tag} <span>·</span> {articles[0].date}
+        </p>
+      </div>
+      <a class="round-link" href="/journal/" aria-label="Read journal">
+        <Icon name="arrow" />
+      </a>
+    </section>
+    <div class="page-foot">
+      <span>Thoughtfully built. Always evolving.</span>
+      <span>
+        Made with Astro <span class="coral-text">✦</span>
+      </span>
+    </div>
+  </div>
+</Editor>

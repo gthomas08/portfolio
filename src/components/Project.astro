@@ -1,0 +1,59 @@
+---
+import Icon from "./Icon.astro";
+import type { projects } from "../data/portfolio";
+interface Props {
+  project: (typeof projects)[number];
+}
+const { project } = Astro.props;
+---
+
+<a
+  class="project"
+  href={`/projects/#${project.id}`}
+  aria-label={`Explore ${project.name}`}
+>
+  <div class:list={["project-art", project.color]} aria-hidden="true">
+    {project.id === "orbit" ? (
+      <div class="orbit-art">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring second"></div>
+        <span class="orbit-dot"></span>
+        <strong>
+          orbit<span>Make space for good work.</span>
+        </strong>
+      </div>
+    ) : project.id === "forma" ? (
+      <div class="forma-art">
+        <div class="forma-shapes">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <strong>
+          forma<span>A system for what’s next.</span>
+        </strong>
+      </div>
+    ) : (
+      <div class="notes-art">
+        <span>Fieldnotes</span>
+        <p>
+          A place for
+          <br />
+          unfinished thoughts.
+        </p>
+        <small>Write something worth keeping.</small>
+      </div>
+    )}
+    <span class="art-open">
+      <Icon name="external" />
+    </span>
+  </div>
+  <div class="project-caption">
+    <div>
+      <h3>{project.name}</h3>
+      <p>{project.kind}</p>
+    </div>
+    <span>{project.year}</span>
+  </div>
+</a>

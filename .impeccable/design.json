@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "direction": "Zed-inspired personal portfolio",
+  "mode": "experience",
+  "tokens": {
+    "color": {
+      "background": "#23242b",
+      "chrome": "#1c1d22",
+      "text": "#e3e4e8",
+      "muted": "#a1a4b0",
+      "accent": "#a6c9ac"
+    },
+    "font": { "body": "Inter Variable", "code": "JetBrains Mono" }
+  },
+  "responsive": { "sidebarOverlay": 760, "singleColumnProjects": 480 }
+}

@@ -1,0 +1,280 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource/jetbrains-mono/400.css";
+import "../styles/global.css";
+import Icon from "../components/Icon.astro";
+import { profile, files } from "../data/portfolio";
+interface Props {
+  page: string;
+  title?: string;
+}
+const { page, title } = Astro.props;
+const current = files.find((f) => f.slug === page) || files[0];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content={`${profile.name} — ${profile.role}. Selected work, ideas, and a little about me.`}
+    />
+    <meta name="theme-color" content="#202127" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>{title || current.label} — {profile.name}</title>
+    <script is:inline>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("portfolio-theme") || "dark";
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a href="#content" class="skip-link">
+      Skip to content
+    </a>
+    <div class="editor">
+      <header class="titlebar">
+        <div class="window-dots" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <button
+          class="icon-button mobile-menu"
+          data-action="sidebar"
+          aria-label="Toggle project explorer"
+          aria-expanded="false"
+        >
+          <Icon name="panel" />
+        </button>
+        <span class="workspace-name">
+          {profile.name.toLowerCase().replaceAll(" ", "-")}{" "}
+          <span>/ portfolio</span>
+        </span>
+        <button
+          class="quick-open"
+          data-action="search"
+          aria-label="Search portfolio files"
+        >
+          <Icon name="search" size={13} />
+          <span>Search files…</span>
+          <kbd>⌘ K</kbd>
+        </button>
+        <a class="title-contact" href="/contact/">
+          <span class="online-dot"></span>Let’s talk
+          <Icon name="external" size={13} />
+        </a>
+      </header>
+      <aside class="sidebar" aria-label="Project explorer">
+        <div class="sidebar-heading">
+          <span>Project</span>
+          <button
+            class="icon-button"
+            data-action="sidebar"
+            aria-label="Toggle project explorer"
+          >
+            <Icon name="panel" size={14} />
+          </button>
+        </div>
+        <details open class="tree">
+          <summary>
+            <Icon name="chevron" size={12} />
+            <Icon name="folder" size={15} />
+            <strong>portfolio</strong>
+            <span class="tree-dot"></span>
+          </summary>
+          <nav>
+            {files.map((file) => (
+              <a
+                href={`/${file.slug}${file.slug ? "/" : ""}`}
+                class:list={["file", { selected: page === file.slug }]}
+                aria-current={page === file.slug ? "page" : undefined}
+              >
+                <span
+                  class:list={[
+                    "file-icon",
+                    file.icon === "ts"
+                      ? "blue-text"
+                      : file.icon === "{}"
+                        ? "yellow-text"
+                        : "purple-text",
+                  ]}
+                >
+                  {file.icon}
+                </span>
+                {file.name}
+              </a>
+            ))}
+          </nav>
+          <div class="tree-muted">
+            <Icon name="chevron" size={12} />
+            <Icon name="folder" size={15} />
+            <span>public</span>
+          </div>
+          <a class="file config-file" href="/about/#colophon">
+            <span class="file-icon coral-text">A</span>astro.config.mjs
+          </a>
+          <a class="file config-file" href="/about/#colophon">
+            <span class="file-icon yellow-text">{"{}"}</span>package.json
+          </a>
+        </details>
+        <div class="sidebar-bottom">
+          <div class="profile-mark">
+            {profile.initials}
+            <span class="online-dot"></span>
+          </div>
+          <strong>{profile.name}</strong>
+          <span>{profile.role}</span>
+          <p>
+            A personal corner of the internet.
+            <br />
+            Built with care, powered by Astro.
+          </p>
+          <a href="/about/">
+            A little more about me <Icon name="arrow" size={13} />
+          </a>
+        </div>
+      </aside>
+      <div class="editor-main">
+        <nav class="tabs" aria-label="Portfolio pages">
+          {files.map((file) => (
+            <a
+              href={`/${file.slug}${file.slug ? "/" : ""}`}
+              class:list={["tab", { active: file.slug === page }]}
+              aria-current={page === file.slug ? "page" : undefined}
+            >
+              <span
+                class:list={[
+                  "file-icon",
+                  file.icon === "ts"
+                    ? "blue-text"
+                    : file.icon === "{}"
+                      ? "yellow-text"
+                      : "purple-text",
+                ]}
+              >
+                {file.icon}
+              </span>
+              {file.name}
+              {file.slug === page && <span class="tab-dot"></span>}
+            </a>
+          ))}
+          <button
+            class="icon-button tab-search"
+            data-action="search"
+            aria-label="Find a file"
+          >
+            <Icon name="search" />
+          </button>
+        </nav>
+        <div class="breadcrumbs">
+          <span>portfolio</span>
+          <Icon name="chevron" size={11} />
+          <span>{current.name}</span>
+          <span class="preview-label">Preview</span>
+        </div>
+        <main id="content" tabindex="-1">
+          <slot />
+        </main>
+        <section class="terminal" hidden aria-label="Interactive terminal">
+          <div class="terminal-head">
+            <span>
+              TERMINAL <span class="muted">portfolio — zsh</span>
+            </span>
+            <button
+              class="icon-button"
+              data-action="terminal"
+              aria-label="Close terminal"
+            >
+              <Icon name="close" size={14} />
+            </button>
+          </div>
+          <div class="terminal-output" role="log" aria-live="polite">
+            Welcome to the portfolio shell. Type “help” to get started.
+          </div>
+          <form id="terminal-form">
+            <label for="terminal-input">
+              visitor@portfolio <span>~ %</span>
+            </label>
+            <input
+              id="terminal-input"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Terminal command"
+            />
+          </form>
+        </section>
+      </div>
+      <footer class="statusbar">
+        <button
+          class="icon-button"
+          data-action="sidebar"
+          aria-label="Toggle project explorer"
+        >
+          <Icon name="panel" size={14} />
+        </button>
+        <span class="branch">
+          <Icon name="branch" size={13} />
+          main
+        </span>
+        <span class="status-check">
+          <Icon name="check" size={13} />
+          All systems curious
+        </span>
+        <div class="status-right">
+          <button data-action="terminal">
+            <Icon name="terminal" size={14} />
+            <span>Terminal</span>
+          </button>
+          <button data-action="theme" aria-label="Toggle color theme">
+            <Icon name="sun" size={14} />
+            <span id="theme-name">One Dark</span>
+          </button>
+          <span class="encoding">UTF-8</span>
+          <a href="https://zed.dev" target="_blank" rel="noreferrer">
+            Inspired by Zed <Icon name="external" size={12} />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <dialog id="command-palette" aria-label="Go to file">
+      <div class="palette-input">
+        <Icon name="search" size={19} />
+        <input
+          id="file-search"
+          placeholder="Go to a file…"
+          aria-label="Search portfolio files"
+          autocomplete="off"
+        />
+        <button class="escape" data-action="close-search">
+          esc
+        </button>
+      </div>
+      <div id="search-results">
+        {files.map((f) => (
+          <a
+            href={`/${f.slug}${f.slug ? "/" : ""}`}
+            data-search={`${f.name} ${f.label}`}
+          >
+            <span class="file-icon purple-text">{f.icon}</span>
+            <span>
+              {f.name}
+              <small>{f.label}</small>
+            </span>
+            <Icon name="arrow" size={15} />
+          </a>
+        ))}
+      </div>
+      <p id="search-empty" hidden>
+        No files found. Try “projects” or “about”.
+      </p>
+      <div class="palette-footer">
+        ↑ ↓ to navigate <span>↵ to open</span>
+      </div>
+    </dialog>
+    <script src="../scripts/editor.ts"></script>
+  </body>
+</html>

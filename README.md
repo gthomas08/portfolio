@@ -32,7 +32,7 @@ All Alex Morgan biography, projects, and journal entries are illustrative sample
 - Light/dark theme with a locally stored preference.
 - Toggleable terminal: Cmd/Ctrl+backtick. Commands: `help`, `ls`, `open projects`, `about`, `projects`, `journal`, `contact`, `theme`, and `clear`.
 - Project filters, copy email, keyboard focus styles, skip navigation, reduced-motion support.
-- Locally bundled JetBrains Mono Variable font and no tracking or external font requests.
+- Locally bundled fonts and no tracking or external font requests.
 - Static HTML for every page; portfolio navigation and content work without JavaScript.
 
 ## Deploy

@@ -4,7 +4,7 @@ The user's explicit Zed editor reference governs the design. Experience mode: vi
 
 ## Tokens
 
-Dark canvas #23242b, chrome #1c1d22, sidebar #1e1f25, borders #33353e, primary text #e3e4e8, secondary text #a1a4b0, sage accent #a6c9ac. Light equivalents live in the `data-theme=light` rule. JetBrains Mono Variable is the single typeface across all page content, editor chrome, code, and metadata, served locally.
+Dark canvas #23242b, chrome #1c1d22, sidebar #1e1f25, borders #33353e, primary text #e3e4e8, secondary text #a1a4b0, sage accent #a6c9ac. Light equivalents live in the `data-theme=light` rule. Inter Variable is the reading face; JetBrains Mono is reserved for editor chrome, code, and metadata. Both are locally served.
 
 ## Structure
 

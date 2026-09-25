@@ -1,0 +1,13 @@
+{
+  "name": "georgethomas-portfolio",
+  "compatibility_date": "2026-09-25",
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    {
+      "pattern": "georgethomas.dev",
+      "custom_domain": true
+    }
+  ]
+}

@@ -10,6 +10,15 @@ interface Props {
 }
 const { page, title } = Astro.props;
 const current = files.find((f) => f.slug === page) || files[0];
+const pageLabel = title || current.label;
+const socialTitle =
+  page === ""
+    ? `${profile.name} — ${profile.role}`
+    : `${pageLabel} — ${profile.name}`;
+const socialDescription = `${profile.name} is a ${profile.role} based in ${profile.location}, with a focus on products, backend systems, architecture, frontend engineering, and agentic AI.`;
+const siteOrigin = Astro.site?.origin ?? "https://georgethomas.dev";
+const canonicalUrl = new URL(Astro.url.pathname, siteOrigin).href;
+const socialImageUrl = new URL("/og-image.png", siteOrigin).href;
 ---
 
 <!doctype html>
@@ -22,7 +31,33 @@ const current = files.find((f) => f.slug === page) || files[0];
       content={`${profile.name} — ${profile.role}. Experience, projects, education, skills, and contact.`}
     />
     <meta name="theme-color" content="#202127" />
-    <title>{title || current.label} — {profile.name}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={socialDescription} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:secure_url" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="George Thomas — Software Engineer, working on backend systems, architecture, frontend engineering, and agentic AI."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={socialDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta
+      name="twitter:image:alt"
+      content="George Thomas — Software Engineer, working on backend systems, architecture, frontend engineering, and agentic AI."
+    />
+    <title>{title || current.label} - {profile.name}</title>
     <script is:inline>
       try {
         document.documentElement.dataset.theme =

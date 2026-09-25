@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#23242b" />
+  <rect width="1200" height="56" fill="#1c1d22" />
+  <path d="M0 56.5h1200" stroke="#33353e" />
+
+  <circle cx="27" cy="28" r="5" fill="#ed6a5e" />
+  <circle cx="47" cy="28" r="5" fill="#e7b550" />
+  <circle cx="67" cy="28" r="5" fill="#62bd5b" />
+  <rect x="96" y="13" width="30" height="30" rx="6" fill="#23242b" stroke="#33353e" />
+  <text x="111" y="33" fill="#a6c9ac" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="-0.7" text-anchor="middle">GT</text>
+  <text x="142" y="35" fill="#e3e4e8" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">georgethomas</text>
+  <text x="240" y="35" fill="#858a98" font-family="Inter, Arial, sans-serif" font-size="13">/ portfolio</text>
+  <text x="1128" y="35" fill="#a1a4b0" font-family="JetBrains Mono, Menlo, monospace" font-size="11" text-anchor="end">georgethomas.dev</text>
+
+  <text x="72" y="192" fill="#a6c9ac" font-family="JetBrains Mono, Menlo, monospace" font-size="14" letter-spacing="2.2">SOFTWARE ENGINEER</text>
+  <text x="70" y="286" fill="#e3e4e8" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="600" letter-spacing="-2.8">George Thomas</text>
+  <path d="M73 316h74" stroke="#a6c9ac" stroke-width="3" />
+
+  <text x="72" y="369" fill="#a1a4b0" font-family="Inter, Arial, sans-serif" font-size="20">Product work across backend systems and architecture,</text>
+  <text x="72" y="403" fill="#a1a4b0" font-family="Inter, Arial, sans-serif" font-size="20">frontend engineering, and agentic AI features.</text>
+
+  <circle cx="78" cy="520" r="4" fill="#a6c9ac" />
+  <text x="94" y="525" fill="#e3e4e8" font-family="Inter, Arial, sans-serif" font-size="14">Patras, Greece</text>
+  <path d="M72 557h585" stroke="#33353e" />
+  <text x="72" y="584" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="11">PERSONAL PORTFOLIO</text>
+
+  <rect x="727" y="131" width="402" height="430" rx="8" fill="#1c1d22" stroke="#33353e" />
+  <path d="M727 176h402" stroke="#33353e" />
+  <circle cx="751" cy="153" r="4" fill="#858a98" />
+  <text x="768" y="157" fill="#a1a4b0" font-family="JetBrains Mono, Menlo, monospace" font-size="12">welcome.md</text>
+  <text x="1106" y="157" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="10" text-anchor="end">PREVIEW</text>
+
+  <text x="752" y="215" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="12" text-anchor="end">01</text>
+  <text x="772" y="215" font-family="JetBrains Mono, Menlo, monospace" font-size="14">
+    <tspan fill="#b7a5d8">const</tspan><tspan x="818" fill="#e3e4e8">role = </tspan><tspan fill="#a6c9ac">"Software Engineer"</tspan><tspan fill="#e3e4e8">;</tspan>
+  </text>
+  <text x="752" y="256" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="12" text-anchor="end">02</text>
+  <text x="772" y="256" font-family="JetBrains Mono, Menlo, monospace" font-size="14">
+    <tspan fill="#b7a5d8">const</tspan><tspan x="818" fill="#e3e4e8">focus = [</tspan>
+  </text>
+  <text x="752" y="297" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="12" text-anchor="end">03</text>
+  <text x="792" y="297" fill="#a6c9ac" font-family="JetBrains Mono, Menlo, monospace" font-size="14">"backend systems",</text>
+  <text x="752" y="338" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="12" text-anchor="end">04</text>
+  <text x="792" y="338" fill="#a6c9ac" font-family="JetBrains Mono, Menlo, monospace" font-size="14">"architecture",</text>
+  <text x="752" y="379" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="12" text-anchor="end">05</text>
+  <text x="792" y="379" fill="#a6c9ac" font-family="JetBrains Mono, Menlo, monospace" font-size="14">"frontend engineering",</text>
+  <text x="752" y="420" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="12" text-anchor="end">06</text>
+  <text x="792" y="420" fill="#a6c9ac" font-family="JetBrains Mono, Menlo, monospace" font-size="14">"agentic AI features",</text>
+  <text x="752" y="461" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="12" text-anchor="end">07</text>
+  <text x="772" y="461" font-family="JetBrains Mono, Menlo, monospace" font-size="14">
+    <tspan fill="#e3e4e8">];</tspan>
+  </text>
+  <path d="M727 510h402" stroke="#33353e" />
+  <text x="751" y="537" fill="#858a98" font-family="JetBrains Mono, Menlo, monospace" font-size="10">ASTRO</text>
+  <text x="1105" y="537" fill="#a6c9ac" font-family="JetBrains Mono, Menlo, monospace" font-size="10" text-anchor="end">UTF-8</text>
+</svg>

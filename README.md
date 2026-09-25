@@ -35,4 +35,4 @@ The current profile information was supplied by George Thomas. Update the data f
 
 ## Deploy
 
-Run `npm run build` and deploy `dist/` to a static host. No server adapter or environment variables are needed. The template uses root-relative URLs; deploy at the root of a domain. If you need a subdirectory deployment, first adapt the links and Astro's `base` setting. Add your production URL as `site` in `astro.config.mjs` when configuring canonical URLs or a sitemap.
+Run `npm run build` and deploy `dist/` to a static host. No server adapter or environment variables are needed. The template uses root-relative URLs; deploy at the root of a domain. If you adapt this portfolio, update `site` in `astro.config.mjs` so canonical and Open Graph URLs use your domain. The social preview is served from `public/og-image.png`; `public/og-image.svg` is its editable vector source.

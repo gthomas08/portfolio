@@ -19,10 +19,9 @@ const current = files.find((f) => f.slug === page) || files[0];
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content={`${profile.name} — ${profile.role}. Selected work, ideas, and a little about me.`}
+      content={`${profile.name} — ${profile.role}. Experience, projects, education, skills, and contact.`}
     />
     <meta name="theme-color" content="#202127" />
-    <link rel="icon" href="/favicon.svg" />
     <title>{title || current.label} — {profile.name}</title>
     <script is:inline>
       try {
@@ -45,13 +44,13 @@ const current = files.find((f) => f.slug === page) || files[0];
         <button
           class="icon-button mobile-menu"
           data-action="sidebar"
-          aria-label="Toggle project explorer"
+          aria-label="Toggle resume explorer"
           aria-expanded="false"
         >
           <Icon name="panel" />
         </button>
         <span class="workspace-name">
-          {profile.name.toLowerCase().replaceAll(" ", "-")}{" "}
+          {profile.name.toLowerCase().replaceAll(" ", "")}{" "}
           <span>/ portfolio</span>
         </span>
         <button
@@ -63,18 +62,15 @@ const current = files.find((f) => f.slug === page) || files[0];
           <span>Search files…</span>
           <kbd>⌘ K</kbd>
         </button>
-        <a class="title-contact" href="/contact/">
-          <span class="online-dot"></span>Let’s talk
-          <Icon name="external" size={13} />
-        </a>
+        <span class="title-context">{profile.location}</span>
       </header>
-      <aside class="sidebar" aria-label="Project explorer">
+      <aside class="sidebar" aria-label="Resume explorer">
         <div class="sidebar-heading">
-          <span>Project</span>
+          <span>Explorer</span>
           <button
             class="icon-button"
             data-action="sidebar"
-            aria-label="Toggle project explorer"
+            aria-label="Toggle resume explorer"
           >
             <Icon name="panel" size={14} />
           </button>
@@ -111,19 +107,12 @@ const current = files.find((f) => f.slug === page) || files[0];
           </nav>
         </details>
         <div class="sidebar-bottom">
-          <div class="profile-mark">
-            {profile.initials}
-            <span class="online-dot"></span>
-          </div>
+          <div class="profile-mark">{profile.initials}</div>
           <strong>{profile.name}</strong>
           <span>{profile.role}</span>
-          <p>
-            A personal corner of the internet.
-            <br />
-            Built with care, powered by Astro.
-          </p>
-          <a href="/about/">
-            A little more about me <Icon name="arrow" size={13} />
+          <p>{profile.location}</p>
+          <a href="/experience/">
+            View experience <Icon name="arrow" size={13} />
           </a>
         </div>
       </aside>
@@ -148,7 +137,6 @@ const current = files.find((f) => f.slug === page) || files[0];
                 {file.icon}
               </span>
               {file.name}
-              {file.slug === page && <span class="tab-dot"></span>}
             </a>
           ))}
           <button
@@ -182,7 +170,7 @@ const current = files.find((f) => f.slug === page) || files[0];
             </button>
           </div>
           <div class="terminal-output" role="log" aria-live="polite">
-            Welcome to the portfolio shell. Type “help” to get started.
+            Welcome to George’s portfolio. Type “help” to get started.
           </div>
           <form id="terminal-form">
             <label for="terminal-input">
@@ -201,7 +189,7 @@ const current = files.find((f) => f.slug === page) || files[0];
         <button
           class="icon-button"
           data-action="sidebar"
-          aria-label="Toggle project explorer"
+          aria-label="Toggle resume explorer"
         >
           <Icon name="panel" size={14} />
         </button>
@@ -258,7 +246,7 @@ const current = files.find((f) => f.slug === page) || files[0];
         ))}
       </div>
       <p id="search-empty" hidden>
-        No files found. Try “projects” or “about”.
+        No files found. Try “experience”, “education”, or “skills”.
       </p>
       <div class="palette-footer">
         ↑ ↓ to navigate <span>↵ to open</span>

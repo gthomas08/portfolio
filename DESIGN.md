@@ -8,12 +8,12 @@ Dark canvas #23242b, chrome #1c1d22, sidebar #1e1f25, borders #33353e, primary t
 
 ## Structure
 
-44px title bar, 225px project explorer, 42px tabs, 35px breadcrumbs, 29px status bar. Content is constrained to 1060px with 66px desktop padding. At 760px the explorer becomes an optional overlay and tabs scroll horizontally. At 480px projects stack.
+44px title bar, 225px resume explorer, 42px tabs, 35px breadcrumbs, 29px status bar. Content is constrained to 1060px with 66px desktop padding. At 760px the explorer becomes an optional overlay and tabs scroll horizontally. The welcome page previews projects and resume details; Experience, Projects, Education, and Skills each have their own page.
 
 ## Components
 
-A large two-line introduction, quietly colored original geometric project art, restrained separators, and a journal preview. Flat editor surfaces with 1px borders; only the mobile overlay and command palette use shadows. Preview thumbnails are authored geometry, not external screenshots. All project details are explicitly illustrative.
+A simple introduction, a project preview in the earlier geometric card style, compact role and education summaries, grouped skill tags, and restrained separators. Flat editor surfaces with 1px borders; only the mobile overlay and command palette use shadows. Content is sourced from details supplied by George Thomas. Other projects and contributions are omitted.
 
 ## Interaction
 
-Real page links; native details for the file tree and project notes; dialog-based keyboard file picker; optional terminal; persisted theme. Native keyboard focus, reduced-motion support, and a skip link remain first-class.
+Real page links; native details for the file tree; dialog-based keyboard file picker; optional terminal; persisted theme. Native keyboard focus, reduced-motion support, and a skip link remain first-class.

@@ -1,0 +1,34 @@
+---
+import Editor from "../layouts/Editor.astro";
+import { experience } from "../data/portfolio";
+---
+
+<Editor page="experience">
+  <div class="page prose-page resume-page">
+    <div class="source-comment">// professional experience</div>
+    <h1>
+      Experience<span class="green-text">.</span>
+    </h1>
+    <p class="lead">Software engineering roles.</p>
+
+    <div class="experience-list">
+      {experience.map((job) => (
+        <article class="experience-row">
+          <div>
+            <p class="eyebrow">{job.company}</p>
+            <h2>{job.role}</h2>
+            {job.description && (
+              <p class="experience-description">{job.description}</p>
+            )}
+          </div>
+          <div class="resume-meta">
+            <span>{job.dates}</span>
+            <span>
+              {job.location} · {job.arrangement}
+            </span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Editor>

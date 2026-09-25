@@ -20,11 +20,11 @@ Preserve Zed's recognizable editor structure and restrained UI.
 
 ## Evidence on Hand
 
-No personal biography or project assets supplied. The user selected editable sample content. All profile and project content is illustrative, not verified claims about the user.
+George Thomas supplied resume information in chat for employment, education, skills, a certificate, and spoken languages. He also supplied the BeforeDoors project, its Convex All Gas Hackathon page, and its live URL. Other projects and open-source contributions remain omitted at his request. No email address or photo was supplied; do not invent them.
 
 ## Users
 
-Assumption: developers customizing the template, and visitors exploring their work and contact details.
+George Thomas's portfolio visitors, plus developers adapting the project as a template.
 
 ## Capabilities and Constraints
 

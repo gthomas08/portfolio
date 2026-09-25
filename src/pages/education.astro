@@ -1,0 +1,57 @@
+---
+import Editor from "../layouts/Editor.astro";
+import Icon from "../components/Icon.astro";
+import { education } from "../data/portfolio";
+---
+
+<Editor page="education">
+  <div class="page prose-page resume-page">
+    <div class="source-comment">// education</div>
+    <h1>
+      Education<span class="green-text">.</span>
+    </h1>
+
+    <article class="education-entry">
+      <p class="eyebrow">{education.institution}</p>
+      <h2>{education.degree}</h2>
+      <p class="education-level">{education.level}</p>
+      <div class="resume-meta education-meta">
+        <span>{education.dates}</span>
+        <span>{education.location}</span>
+        <span>Grade: {education.grade}</span>
+      </div>
+
+      <section class="thesis">
+        <h3>Thesis</h3>
+        <p class="thesis-title">
+          <a
+            class="external-text-link"
+            href={education.thesisUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            “{education.thesis}” <Icon name="external" size={13} />
+          </a>
+        </p>
+        <nav class="thesis-links" aria-label="Thesis resources">
+          <a
+            class="external-text-link"
+            href={education.thesisGithubUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub <Icon name="external" size={12} />
+          </a>
+          <a
+            class="external-text-link"
+            href={education.thesisWikiUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Wiki <Icon name="external" size={12} />
+          </a>
+        </nav>
+      </section>
+    </article>
+  </div>
+</Editor>

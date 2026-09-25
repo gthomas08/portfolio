@@ -13,27 +13,25 @@ npm run dev
 
 Open http://localhost:4321. `npm run build` runs Astro's type checker and creates a static production build in `dist/`. `npm run preview` previews that build.
 
-## Make it yours
+## Update the resume
 
-- `src/data/portfolio.ts`: sample name, email, social URL, availability, project metadata, journal entries, and file navigation.
-- `src/pages/index.astro`: homepage headline and introduction layout.
-- `src/pages/about.astro`: longer biography and tools.
-- `src/components/Project.astro`: original CSS project artwork. Replace with real screenshots when adding your projects.
+- `src/data/portfolio.ts`: profile, experience, projects, education, skills, certificate, spoken languages, and file navigation.
+- `src/pages/index.astro`: welcome page and portfolio overview.
+- `src/pages/experience.astro`, `src/pages/projects.astro`, `src/pages/education.astro`, and `src/pages/skills.astro`: the individual portfolio pages.
 - `src/styles/global.css`: all layout and theme tokens. Dark and light palettes are declared at the top.
-- `public/favicon.svg`: site icon.
 
-All Alex Morgan biography, projects, and journal entries are illustrative sample content. The email is an example address and the GitHub link is generic. Replace these before publishing. Project notes intentionally identify the examples rather than pretending to link to live products.
+The current profile information was supplied by George Thomas. Update the data file and page content with your own details before reusing the site. No email or social links are included because none were supplied.
 
 ## Included
 
-- Welcome, About, Projects, Journal, Contact, and custom 404 pages.
+- Welcome, Experience, Projects, Education, Skills, and custom 404 pages.
 - Responsive Zed-inspired title bar, file tree, tabs, breadcrumbs, and status bar.
 - Quick file picker: Cmd/Ctrl+K or Cmd/Ctrl+P, arrow keys, Enter, Escape.
 - Light/dark theme with a locally stored preference.
-- Toggleable terminal: Cmd/Ctrl+backtick. Commands: `help`, `ls`, `open projects`, `about`, `projects`, `journal`, `contact`, `theme`, and `clear`.
-- Project filters, copy email, keyboard focus styles, skip navigation, reduced-motion support.
+- Toggleable terminal: Cmd/Ctrl+backtick. Commands: `help`, `ls`, `open experience`, `projects`, `education`, `skills`, `theme`, and `clear`.
+- Keyboard focus styles, skip navigation, and reduced-motion support.
 - Locally bundled fonts and no tracking or external font requests.
-- Static HTML for every page; portfolio navigation and content work without JavaScript.
+- Static HTML for every page; resume navigation and content work without JavaScript.
 
 ## Deploy
 

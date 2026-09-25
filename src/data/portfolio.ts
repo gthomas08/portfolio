@@ -1,76 +1,128 @@
-// Replace this sample content to make the workspace yours.
+// Update this file with your own resume details and file navigation.
 export const profile = {
-  name: "Alex Morgan",
-  initials: "am",
-  role: "Design-minded developer",
-  location: "Brooklyn, New York",
-  timezone: "America/New_York",
-  email: "hello@example.com",
-  github: "https://github.com",
-  headline: "Good things happen at the intersection.",
-  intro:
-    "I’m Alex, a developer who cares as much about how things feel as how they work. I turn thoughtful ideas into useful digital experiences.",
-  available: true,
+  name: "George Thomas",
+  initials: "GT",
+  role: "Software Engineer",
+  location: "Patras, Greece",
 };
+
 export const files = [
   { slug: "", name: "welcome.md", icon: "md", label: "Welcome" },
-  { slug: "about", name: "about.md", icon: "md", label: "About me" },
   { slug: "projects", name: "projects.ts", icon: "ts", label: "Projects" },
-  { slug: "journal", name: "journal.md", icon: "md", label: "Journal" },
+  {
+    slug: "experience",
+    name: "experience.md",
+    icon: "md",
+    label: "Experience",
+  },
+  { slug: "education", name: "education.md", icon: "md", label: "Education" },
+  { slug: "skills", name: "skills.md", icon: "md", label: "Skills" },
   { slug: "contact", name: "contact.json", icon: "{}", label: "Contact" },
 ];
-export const projects = [
+
+export const contactLinks = [
+  { key: "x", label: "X", url: "https://x.com/geo_thomas_" },
+  { key: "github", label: "GitHub", url: "https://github.com/gthomas08" },
   {
-    id: "orbit",
-    name: "Orbit",
-    kind: "Product design & development",
-    description:
-      "A quieter place to organize your work. A task manager built around focus, flow, and a little breathing room.",
-    stack: ["Astro", "TypeScript", "CSS"],
-    year: "2025",
-    color: "mint",
-  },
-  {
-    id: "forma",
-    name: "Forma",
-    kind: "Design systems & tooling",
-    description:
-      "Small components. Endless possibilities. An accessible component library for making the web feel a little more considered.",
-    stack: ["React", "Storybook", "Figma"],
-    year: "2025",
-    color: "peach",
-  },
-  {
-    id: "fieldnotes",
-    name: "Fieldnotes",
-    kind: "Creative development",
-    description:
-      "A digital garden for curious minds. A lightweight writing space for ideas that aren’t quite finished yet.",
-    stack: ["Astro", "MDX", "TypeScript"],
-    year: "2024",
-    color: "blue",
+    key: "linkedin",
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/gthomas08",
   },
 ];
-export const articles = [
+
+export const projects = [
   {
-    id: "small-details",
-    title: "The small details are the big details",
-    date: "June 12, 2025",
-    tag: "Design engineering",
-    body: "The best interfaces rarely announce themselves. They make the next step feel obvious. A useful label, a generous hit target, a loading state that explains what is happening: these decisions add up to trust.\n\nI like to start with the ordinary moments. What happens when a list is empty? Can someone finish the task using a keyboard? Does the layout survive a longer title? Craft lives in those questions.\n\nBefore adding another effect, I try to make one everyday interaction a little clearer.",
+    id: "beforedoors",
+    name: "BeforeDoors",
+    kind: "Hackathon submission",
+    event: "Convex All Gas Hackathon",
+    description:
+      "Makes venue access information easier to understand before a visit.",
+    repositoryUrl: "https://github.com/gthomas08/beforedoors",
+    eventUrl: "https://www.convex.dev/hackathons/all-gas",
+    liveUrl: "https://adventurous-toad-482.convex.site",
+  },
+];
+
+export const experience = [
+  {
+    company: "EY",
+    role: "Software Engineer",
+    dates: "July 2023 – Present",
+    location: "Patras, Greece",
+    arrangement: "Hybrid",
+    description:
+      "I work on products, focusing on their underlying systems and architecture while also building frontend and agentic AI features.",
   },
   {
-    id: "less-javascript",
-    title: "A little less JavaScript, a little more web",
-    date: "May 24, 2025",
-    tag: "Development",
-    body: "A personal website is a good place to remember how much the browser already knows. Links navigate. Forms collect information. HTML gives content a structure before a script ever arrives.\n\nFor this template, Astro renders the pages ahead of time. Small scripts add a command palette, a theme preference, and a playful terminal. The portfolio remains readable without them.\n\nMy starting question is simple: what is the smallest amount of code that makes this experience better?",
+    company: "Citrix",
+    role: "Software Engineer Intern",
+    dates: "March 2022 – May 2022",
+    location: "Patras, Greece",
+    arrangement: "Remote",
+    description:
+      "I worked on user workflows and data-driven actions for an application delivery management system.",
+  },
+];
+
+export const education = {
+  degree: "Computer Engineering & Informatics",
+  level: "Integrated M.Sc",
+  institution: "University of Patras",
+  dates: "2017 – 2022",
+  grade: "7.51",
+  location: "Patras, Greece",
+  thesis:
+    "Implementation of multi-factor authentication for web applications via the Shibboleth infrastructure",
+  thesisUrl:
+    "https://nemertes.library.upatras.gr/server/api/core/bitstreams/3f06bf72-cdb1-499c-8b53-81c934d46e1e/content",
+  thesisGithubUrl: "https://github.com/gthomas08/TOTP-Manager",
+  thesisWikiUrl:
+    "https://github.com/gthomas08/TOTP-Manager/wiki/Shibboleth-IdP-Integration",
+};
+
+export const skillGroups = [
+  {
+    category: "Programming Languages",
+    skills: ["JavaScript", "TypeScript", "Python", "Go", "C#"],
   },
   {
-    id: "side-projects",
-    title: "Making room for side projects",
-    date: "April 8, 2025",
-    tag: "Process",
-    body: "Not every project needs a launch plan. Sometimes the point is to learn a tool, explore a visual idea, or solve a tiny problem for yourself.\n\nI keep the first version deliberately small: one useful interaction, one finished screen, one thing I can share. Constraints make it easier to finish and easier to notice what matters.\n\nA little curiosity, given a little time, can become something worth keeping.",
+    category: "Web Technologies & Tools",
+    skills: [
+      "Node.js",
+      "React",
+      "Next.js",
+      "FastAPI",
+      ".NET",
+      "REST APIs",
+      "OpenAPI",
+      "Git",
+      "Docker",
+    ],
   },
+  {
+    category: "Cloud & Search Engines",
+    skills: [
+      "Azure",
+      "Elasticsearch",
+      "Kubernetes",
+      "OpenTelemetry",
+      "Grafana",
+    ],
+  },
+  {
+    category: "Databases",
+    skills: ["Postgres", "Qdrant", "MongoDB", "MSSQL"],
+  },
+];
+
+export const certificate = {
+  name: "DevOps With Docker",
+  issuer: "University of Helsinki (MOOC)",
+  url: "https://github.com/gthomas08/DevOps-With-Docker",
+};
+
+export const spokenLanguages = [
+  { name: "Greek", level: "Native" },
+  { name: "English", level: "C2" },
 ];

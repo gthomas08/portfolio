@@ -115,9 +115,10 @@ const terminalInput =
 const output = document.querySelector<HTMLElement>(".terminal-output")!;
 const routes: Record<string, string> = {
   welcome: "/",
-  about: "/about/",
+  experience: "/experience/",
   projects: "/projects/",
-  journal: "/journal/",
+  education: "/education/",
+  skills: "/skills/",
   contact: "/contact/",
 };
 terminalForm.addEventListener("submit", (e) => {
@@ -136,10 +137,10 @@ terminalForm.addEventListener("submit", (e) => {
   const answer = document.createElement("div");
   if (cmd === "help")
     answer.textContent =
-      "Commands: help, ls, open <page>, about, projects, journal, contact, theme, clear";
+      "Commands: help, ls, open <page>, experience, projects, education, skills, contact, theme, clear";
   else if (cmd === "ls")
     answer.textContent =
-      "welcome.md  about.md  projects.ts  journal.md  contact.json";
+      "welcome.md  projects.ts  experience.md  education.md  skills.md  contact.json";
   else if (cmd === "theme") {
     toggleTheme();
     answer.textContent = "Theme switched.";
@@ -156,34 +157,3 @@ terminalForm.addEventListener("submit", (e) => {
   output.append(answer);
   output.scrollTop = output.scrollHeight;
 });
-document
-  .querySelector<HTMLButtonElement>("#copy-email")
-  ?.addEventListener("click", async (e) => {
-    const button = e.currentTarget as HTMLButtonElement;
-    const status = document.querySelector("#copy-status")!;
-    try {
-      await navigator.clipboard.writeText(button.dataset.email!);
-      status.textContent = "Email address copied.";
-    } catch {
-      status.textContent =
-        "Could not copy. Select the email address to copy it manually.";
-    }
-  });
-document
-  .querySelectorAll<HTMLButtonElement>("[data-filter]")
-  .forEach((button) =>
-    button.addEventListener("click", () => {
-      document.querySelectorAll("[data-filter]").forEach((b) => {
-        b.classList.toggle("active", b === button);
-        b.setAttribute("aria-pressed", String(b === button));
-      });
-      document
-        .querySelectorAll<HTMLElement>("[data-stack]")
-        .forEach(
-          (project) =>
-            (project.hidden =
-              button.dataset.filter !== "all" &&
-              !project.dataset.stack!.includes(button.dataset.filter!)),
-        );
-    }),
-  );

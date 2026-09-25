@@ -1,0 +1,62 @@
+---
+import Editor from "../layouts/Editor.astro";
+import Icon from "../components/Icon.astro";
+import { certificate, skillGroups, spokenLanguages } from "../data/portfolio";
+---
+
+<Editor page="skills">
+  <div class="page prose-page resume-page">
+    <div class="source-comment">// tools and technologies</div>
+    <h1>
+      Skills<span class="green-text">.</span>
+    </h1>
+
+    <div class="skill-groups">
+      {skillGroups.map((group) => (
+        <section class="skill-group">
+          <h2>{group.category}</h2>
+          <div class="stack-list">
+            {group.skills.map((skill) => (
+              <span>{skill}</span>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <section class="resume-section credential-section">
+      <div class="section-heading">
+        <h2>Certificate</h2>
+      </div>
+      <div class="credential-row">
+        <h3>
+          <a
+            class="external-text-link"
+            href={certificate.url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${certificate.name} certificate on GitHub (opens in a new tab)`}
+          >
+            {certificate.name}
+            <Icon name="external" size={13} />
+          </a>
+        </h3>
+        <p>{certificate.issuer}</p>
+      </div>
+    </section>
+
+    <section class="resume-section language-section">
+      <div class="section-heading">
+        <h2>Spoken languages</h2>
+      </div>
+      <div class="language-list">
+        {spokenLanguages.map((language) => (
+          <div class="language-row">
+            <span>{language.name}</span>
+            <span>{language.level}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</Editor>

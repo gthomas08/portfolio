@@ -1,58 +1,36 @@
 ---
 import Editor from "../layouts/Editor.astro";
+import Icon from "../components/Icon.astro";
 import Project from "../components/Project.astro";
 import { projects } from "../data/portfolio";
 ---
 
 <Editor page="projects">
-  <div class="page prose-page">
-    <div class="source-comment">// ideas, brought to life</div>
+  <div class="page prose-page resume-page">
+    <div class="source-comment">// projects</div>
     <h1>
-      A few things I’ve made<span class="green-text">.</span>
+      Projects<span class="green-text">.</span>
     </h1>
-    <p class="lead">
-      A collection of experiments, useful tools, and things made with a little
-      extra care.
-    </p>
-    <div class="filter-bar" aria-label="Filter projects">
-      <button class="active" data-filter="all" aria-pressed="true">
-        All projects <span>3</span>
-      </button>
-      <button data-filter="Astro" aria-pressed="false">
-        Astro
-      </button>
-      <button data-filter="React" aria-pressed="false">
-        React
-      </button>
-    </div>
+    <p class="lead">Selected work and hackathon submissions.</p>
+
     <div class="project-list">
       {projects.map((project) => (
-        <article id={project.id} data-stack={project.stack.join(" ")}>
+        <article class="project-entry" id={project.id}>
           <Project project={project} />
-          <p>{project.description}</p>
-          <div class="stack-list">
-            {project.stack.map((t) => (
-              <span>{t}</span>
-            ))}
-          </div>
-          <details class="project-details">
-            <summary>Project notes</summary>
-            <p>
-              This is an illustrative project for the template. Replace it with
-              your own work, screenshots, and live or repository links in{" "}
-              <code>src/data/portfolio.ts</code>.
-            </p>
-            <p>
-              The focus: a clear content hierarchy, thoughtful interaction
-              states, and a responsive experience from the first screen to the
-              last.
-            </p>
-          </details>
+          <p class="project-description">{project.description}</p>
+          <nav class="project-links" aria-label={`${project.name} links`}>
+            <a href={project.repositoryUrl} target="_blank" rel="noreferrer">
+              GitHub <Icon name="external" size={13} />
+            </a>
+            <a href={project.eventUrl} target="_blank" rel="noreferrer">
+              Hackathon <Icon name="external" size={13} />
+            </a>
+            <a href={project.liveUrl} target="_blank" rel="noreferrer">
+              Live site <Icon name="external" size={13} />
+            </a>
+          </nav>
         </article>
       ))}
     </div>
-    <p class="sample-note">
-      These are example projects. Replace them with the work you’re proud of.
-    </p>
   </div>
 </Editor>

@@ -234,6 +234,9 @@ p {
   padding-left: 44px;
   color: var(--muted);
 }
+.file.root-file {
+  padding-left: 15px;
+}
 .file:hover {
   background: var(--hover);
   color: var(--text);

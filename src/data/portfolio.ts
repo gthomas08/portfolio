@@ -18,6 +18,7 @@ export const files = [
   { slug: "education", name: "education.md", icon: "md", label: "Education" },
   { slug: "skills", name: "skills.md", icon: "md", label: "Skills" },
   { slug: "contact", name: "contact.json", icon: "{}", label: "Contact" },
+  { slug: "agents", name: "AGENTS.md", icon: "md", label: "AGENTS.md" },
 ];
 
 export const contactLinks = [

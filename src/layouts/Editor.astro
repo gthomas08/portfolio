@@ -10,6 +10,8 @@ interface Props {
 }
 const { page, title } = Astro.props;
 const current = files.find((f) => f.slug === page) || files[0];
+const portfolioFiles = files.filter((file) => file.slug !== "agents");
+const rootFiles = files.filter((file) => file.slug === "agents");
 const pageLabel = title || current.label;
 const socialTitle =
   page === ""
@@ -118,7 +120,7 @@ const socialImageUrl = new URL("/og-image.png", siteOrigin).href;
             <span class="tree-dot"></span>
           </summary>
           <nav>
-            {files.map((file) => (
+            {portfolioFiles.map((file) => (
               <a
                 href={`/${file.slug}${file.slug ? "/" : ""}`}
                 class:list={["file", { selected: page === file.slug }]}
@@ -141,6 +143,22 @@ const socialImageUrl = new URL("/og-image.png", siteOrigin).href;
             ))}
           </nav>
         </details>
+        <nav class="root-files" aria-label="Root-level files">
+          {rootFiles.map((file) => (
+            <a
+              href={`/${file.slug}/`}
+              class:list={[
+                "file",
+                "root-file",
+                { selected: page === file.slug },
+              ]}
+              aria-current={page === file.slug ? "page" : undefined}
+            >
+              <span class="file-icon purple-text">{file.icon}</span>
+              {file.name}
+            </a>
+          ))}
+        </nav>
         <div class="sidebar-bottom">
           <div class="profile-mark">{profile.initials}</div>
           <strong>{profile.name}</strong>

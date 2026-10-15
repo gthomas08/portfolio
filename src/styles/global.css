@@ -8,7 +8,7 @@
   --border: #33353e;
   --text: #e3e4e8;
   --muted: #a1a4b0;
-  --subtle: #858a98;
+  --subtle: #8e93a1;
   --green: #a6c9ac;
   --purple: #b7a5d8;
   --blue: #8db9dc;
@@ -620,7 +620,7 @@ h1 {
   justify-content: space-between;
   padding-top: 13px;
 }
-.project-caption h3 {
+.project-caption h2 {
   font-size: 13px;
   font-weight: 550;
   margin-bottom: 3px;
